@@ -1,11 +1,17 @@
+from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Packages
+from .models import Package
 # Create your views here.
 
-def APIgeneration(request):
+def APIgen(request):
     # packages names,location, activities, intermodal services
     context = {
-        'Travel_Planner': Packages.objects.all()
+        'Travel_Planner': Package.objects.all()
     }
-    return render(request,"RemoteDatabase/xxx.html", context)
+    answer = {
+
+    }
+    queryset = Package.objects.all()
+    data = list(queryset.values())
+    return JsonResponse(data, safe=False)

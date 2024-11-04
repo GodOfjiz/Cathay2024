@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'RemoteDatebase.apps.RemotedatabaseConfig',
+    'RemoteDatabase.apps.RemotedatabaseConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
