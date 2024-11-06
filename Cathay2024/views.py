@@ -23,7 +23,7 @@ def route_optimize(request):
         destination = request.data.get('destination')
         origin = request.data.get('origin')
         travel_mode = request.data.get('travel_mode', ['TRAIN'])
-        route_pref = request.data.get('route_pref')
+        route_pref = request.data.get('route_pref', 'LESS_WALKING')
         answer = Route.POSTroute(destination = destination, origin = origin, travel_mode = travel_mode, route_pref = route_pref, alternative = False)
         return Response(answer)
 

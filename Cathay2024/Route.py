@@ -6,7 +6,7 @@ def POSTroute(destination, origin, travel_mode, route_pref, alternative = False)
     route_url = 'https://routes.googleapis.com/directions/v2:computeRoutes'
     route_headers = {
         'Content-Type': 'application/json',
-        'X-Goog-Api-Key': 'API',
+        'X-Goog-Api-Key': 'AIzaSyBw5ARUwQ3H6_NKnFP2JENZMQ519SN0dp8',
         'X-Goog-FieldMask': 'routes.legs.steps.transitDetails'
     }
 
@@ -31,11 +31,9 @@ def POSTroute(destination, origin, travel_mode, route_pref, alternative = False)
     route_data = json.dumps(route_data)
     response = requests.post(route_url, headers=route_headers, data=route_data)
     route_res = response.json()
-    
     transit = route_res['routes'][0]['legs'][0]['steps']
     filtered_transit = [step for step in transit if step != {}]
     transit_route = {}
-
     # Extracting stops and calculating durations
     for route in filtered_transit:
         transit_details = route['transitDetails']
@@ -73,9 +71,10 @@ def POSTroute(destination, origin, travel_mode, route_pref, alternative = False)
                                                         agencies, agencies_url, transport]
 
     # return the transit_route dictionary
+    
     return(transit_route)
 
-POSTroute(destination = 'Rovaniemi', origin = 'Göteborg Landvetter Airport', travel_mode = ["TRAIN"],
+POSTroute(destination = 'Hong Kong', origin = 'Hong Kong International Airport', travel_mode = ["TRAIN"],
           route_pref = 'LESS_WALKING', alternative = False)
 
     
