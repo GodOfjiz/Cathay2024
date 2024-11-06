@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'Cathay2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'debugHerodb',
+        'NAME': 'test',
         'USER' : 'root',
-        'PASSWORD' : 'debugHeroes1!',
+        'PASSWORD' : 'Jazzy1300',
         'HOST': 'localhost',
         'PORT': '3300',
     }

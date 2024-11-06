@@ -23,3 +23,4 @@ urlpatterns = [
     path('ken_api/activity/', views.activity_seeking, name='activity'),
     path('ken_api/route/', views.route_optimize, name='route'),
     #path('ken_api/tickets/', views.tickets_get, name='tickets')]
+]

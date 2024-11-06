@@ -11,16 +11,19 @@ def hello_world(request):
 
 @api_view(['GET', 'POST'])
 def activity_seeking(request):
-    if request.method == 'GET':
-        data = json.loads(request.body)
-        location = data.get('location', 'Osaka')  # Default to 'Osaka' if not provided
-        no_of_suggestions = data.get('no_of_suggestions', 10)  # Default to 10 if not provided
-        answer = Activity.GETactivityloc(destination = location, no_of_suggestions = no_of_suggestions)
-    return Response(answer)
+    if request.method == 'POST':
+        location = request.data.get('location', 'Osaka')
+        no_of_suggestions = request.data.get('no_of_suggestions', 10)
+        activities = Activity.GETactivityloc(destination=location, no_of_suggestions=no_of_suggestions)
+        return Response(activities)
 
 @api_view(['GET', 'POST'])
 def route_optimize(request):
-    
-    answer = Route.POSTroute(destination = 'Rovaniemi', origin = 'GÃ¶teborg Landvetter Airport', travel_mode = ["TRAIN"], route_pref = 'LESS_WALKING', alternative = False)
-    return Response(answer)
+    if request.method == 'POST':
+        destination = request.data.get('destination')
+        origin = request.data.get('origin')
+        travel_mode = request.data.get('travel_mode', ['TRAIN'])
+        route_pref = request.data.get('route_pref')
+        answer = Route.POSTroute(destination = destination, origin = origin, travel_mode = travel_mode, route_pref = route_pref, alternative = False)
+        return Response(answer)
 
