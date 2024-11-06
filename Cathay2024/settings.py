@@ -25,20 +25,20 @@ SECRET_KEY = 'django-insecure-3f7&546-j_7#o^@)(yi69i$*zj_mrf)ovg!&@dl7pl2q)pws5#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'RemoteDatabase.apps.RemotedatabaseConfig',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'Cathay2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'cathay',
+        'NAME': 'debugHerodb',
         'USER' : 'root',
-        'PASSWORD' : 'Jazzy1300',
+        'PASSWORD' : 'debugHeroes1!',
         'HOST': 'localhost',
         'PORT': '3300',
     }
