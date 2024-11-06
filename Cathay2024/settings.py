@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'Cathay2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'cathay',
         'USER' : 'root',
         'PASSWORD' : 'Jazzy1300',
         'HOST': 'localhost',

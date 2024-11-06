@@ -16,7 +16,7 @@ class Airport(models.Model):
     iata_code = models.CharField(max_length=4)
 
 class Flight_Ticket(models.Model):
-    ticket_id = models.IntegerField()
+    ticket_id = models.AutoField(primary_key=True)
     passenger_name = models.ForeignKey(Passenger, on_delete=models.CASCADE, related_name="passenger_name", default=None)
     Departure = models.DateTimeField(default=None)
     Return = models.DateTimeField(default=None) # if return_date is null then the passenger is taking a one way ticket
