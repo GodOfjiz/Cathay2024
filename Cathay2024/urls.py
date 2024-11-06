@@ -23,4 +23,7 @@ urlpatterns = [
     path("",include("RemoteDatabase.urls")),
     path('api-auth/', include('rest_framework.urls')),
     path('ken_api/', views.hello_world, name='testing'),
+    path('ken_api/activity/', views.activity_seeking, name='activity'),
+    path('ken_api/route/', views.route_optimize, name='route'),
+    #path('ken_api/tickets/', views.tickets_get, name='tickets')
 ]
