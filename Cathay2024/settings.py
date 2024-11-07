@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'RemoteDatabase.apps.RemotedatabaseConfig',
     'django.contrib.admin',
     'django.contrib.auth',
+    'corsheaders',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -42,14 +43,18 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Cathay2024.urls'
 
@@ -78,9 +83,9 @@ WSGI_APPLICATION = 'Cathay2024.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'debugHerodb',
         'USER' : 'root',
-        'PASSWORD' : 'Jazzy1300',
+        'PASSWORD' : 'debugHeroes1!',
         'HOST': 'localhost',
         'PORT': '3300',
     }

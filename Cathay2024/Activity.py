@@ -1,7 +1,7 @@
 import requests
 
 def GETdeslatlon(destination):
-    des_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={destination}&key=AIzaSyC7vmqbJpX9ctZp_4eUpPjz3GUkXkaUv2k'
+    des_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={destination}&key=gaeee'
     des_res = requests.get(des_url)
     des_lat = des_res.json()['results'][0]['geometry']['location']['lat']
     des_lon = des_res.json()['results'][0]['geometry']['location']['lng']
