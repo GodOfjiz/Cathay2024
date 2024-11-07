@@ -1,7 +1,7 @@
 import requests
 
 def GETdeslatlon(destination):
-    des_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={destination}&key=gaeee'
+    des_url = f'https://maps.googleapis.com/maps/api/geocode/json?address={destination}&key=AIzaSyClc9svc47iMOCEPPGiY8NBk_Pja1cEx7A'
     des_res = requests.get(des_url)
     des_lat = des_res.json()['results'][0]['geometry']['location']['lat']
     des_lon = des_res.json()['results'][0]['geometry']['location']['lng']
@@ -44,4 +44,4 @@ def GETactivityloc(destination, no_of_suggestions):
 
     return activity
 
-GETactivityloc(destination = 'Osaka', no_of_suggestions = 10)
+#GETactivityloc(destination = 'osaka', no_of_suggestions = 10)

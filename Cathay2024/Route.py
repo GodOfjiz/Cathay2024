@@ -6,7 +6,7 @@ def POSTroute(destination, origin, travel_mode, route_pref, alternative = False)
     route_url = 'https://routes.googleapis.com/directions/v2:computeRoutes'
     route_headers = {
         'Content-Type': 'application/json',
-        'X-Goog-Api-Key': 'loll',
+        'X-Goog-Api-Key': 'AIzaSyDTpwmj7c2ouLhFE1TU9lA0-5rSKtg1dmw',
         'X-Goog-FieldMask': 'routes.legs.steps.transitDetails'
     }
 
